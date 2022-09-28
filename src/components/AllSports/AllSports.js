@@ -3,6 +3,7 @@ import './AllSports.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShield } from '@fortawesome/free-solid-svg-icons';
 import Sports from '../Sports/Sports';
+import ScoreBoard from '../ScoreBoard/ScoreBoard';
 
 const AllSports = () => {
     const [sports, setSports] = useState([]);
@@ -14,10 +15,10 @@ const AllSports = () => {
                 console.log(data)
                 setSports(data)
             });
-    }, [])
+    }, []);
     return (
         <div className='row'>
-            <div className="col-7">
+            <div className="col-8">
                 <h1 className='heading'><FontAwesomeIcon icon={faShield} className='icon pe-4' />Virtual Referee</h1>
                 <h4 className='mt-5'>Take Your Game Today</h4>
                 <div className="row">
@@ -27,8 +28,8 @@ const AllSports = () => {
 
                 </div>
             </div>
-            <div className="col-5">
-                this is counter side section
+            <div className="col-4 main-score-board">
+                <ScoreBoard></ScoreBoard>
             </div>
         </div>
     );

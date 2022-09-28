@@ -4,8 +4,10 @@ import AllSports from './components/AllSports/AllSports';
 
 function App() {
   return (
-    <div className="container">
-      <AllSports></AllSports>
+    <div className='main-bg'>
+      <div className="container">
+        <AllSports></AllSports>
+      </div>
     </div>
   );
 }
