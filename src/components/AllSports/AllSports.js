@@ -21,10 +21,10 @@ const AllSports = () => {
     }
     return (
         <div className='row flex-column-reverse flex-lg-row'>
-            <div className="col-lg-9 p-5">
-                <h1 className='heading'><FontAwesomeIcon icon={faShield} className='icon pe-4' />Virtual Referee</h1>
-                <h4 className='mt-5 mb-4'>Take Your Game Today</h4>
-                <div className="row">
+            <div className="col-lg-9 pt-5 ps-5 pe-5 pb-0">
+                <h1 className='heading text-center text-lg-start'><FontAwesomeIcon icon={faShield} className='icon pe-4' />Virtual Referee</h1>
+                <h4 className='mt-5 mb-4 text-center text-lg-start'>Take Your Game Today</h4>
+                <div className="row pb-0">
                     {
                         sports.map(sport => <Sports
                             sport={sport}
