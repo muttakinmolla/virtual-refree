@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import './ScoreBoard.css';
 import Author from '../../muttakin_the_dev3.jpg';
 import { addToLocalStorage, getFromLocalStorage } from '../../utilities/utilities';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ScoreBoard = (props) => {
     const gameTime = props.gameTime;
@@ -21,7 +22,7 @@ const ScoreBoard = (props) => {
     }
 
     const clearAll = () => {
-        toast.success('🦄successfully clear!', {
+        toast.success(' successfully cleared', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -33,6 +34,17 @@ const ScoreBoard = (props) => {
     }
     return (
         <div>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <div className='d-flex align-items-center mt-4 main-score-board'>
                 <img src={Author} alt="" className='rounded-circle author-img' />
                 <div className='ms-3'>
