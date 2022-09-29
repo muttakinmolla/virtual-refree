@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShield } from '@fortawesome/free-solid-svg-icons';
 import Sports from '../Sports/Sports';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
+import { ToastContainer } from 'react-toastify';
 
 const AllSports = () => {
     const [sports, setSports] = useState([]);
@@ -21,6 +22,7 @@ const AllSports = () => {
     }
     return (
         <div className='row'>
+            <ToastContainer />
             <div className="col-9 p-5">
                 <h1 className='heading'><FontAwesomeIcon icon={faShield} className='icon pe-4' />Virtual Referee</h1>
                 <h4 className='mt-5 mb-4'>Take Your Game Today</h4>
@@ -38,6 +40,7 @@ const AllSports = () => {
             <div className="col-3 main-score-board">
                 <ScoreBoard gameTime={gameTime}></ScoreBoard>
             </div>
+
         </div>
     );
 };

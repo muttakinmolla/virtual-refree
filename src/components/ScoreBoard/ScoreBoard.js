@@ -1,18 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import './ScoreBoard.css';
 import Author from '../../muttakin_the_dev3.jpg';
-import { addToLocalStorage } from '../../utilities/utilities';
+import { addToLocalStorage, getFromLocalStorage } from '../../utilities/utilities';
 
 const ScoreBoard = (props) => {
     const gameTime = props.gameTime;
+
     const [breakTime, setBreakTime] = useState(0);
 
-
+    useEffect(() => {
+        const newBreakTime = getFromLocalStorage();
+        setBreakTime(newBreakTime.break)
+    }, [])
     const handleBreakTime = (time) => {
         addToLocalStorage(time);
         setBreakTime(time);
+    }
+
+    const clearAll = () => {
+        toast.success('🦄successfully clear!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
     return (
         <div>
@@ -77,7 +94,8 @@ const ScoreBoard = (props) => {
                 <p>{breakTime} <span>M</span></p>
             </div>
 
-            <button className='mt-5 w-100 game-end-btn rounded'>Game End</button>
+            <button className='mt-5 w-100 game-end-btn rounded' onClick={clearAll}>Game End</button>
+
         </div>
     );
 };

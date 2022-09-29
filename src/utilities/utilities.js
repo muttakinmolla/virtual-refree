@@ -1,22 +1,34 @@
-
 const addToLocalStorage = (time) => {
-    const breakTime = time;
-    localStorage.setItem('breakTime', JSON.stringify(breakTime))
+    let breakTime = { 'break': 0 };
+
+    const storedTime = localStorage.getItem('breakTime');
+    if (storedTime) {
+        breakTime = JSON.parse(storedTime);
+    }
+
+    breakTime.break = time;
+
+    localStorage.setItem('breakTime', JSON.stringify(breakTime));
 }
 
+const getFromLocalStorage = () => {
+    let breakTime = { 'break': 0 };
 
-const getStoredBreakTime = () =>{
-    let shoppingCart = {};
-
-
-    const storedBreakTime = localStorage.getItem('breakTime');
-    if(storedCart){
-        shoppingCart = JSON.parse(storedCart);
+    const storedTime = localStorage.getItem('breakTime');
+    if (storedTime) {
+        breakTime = JSON.parse(storedTime);
     }
-    return shoppingCart;
+
+    return breakTime;
+}
+
+const removeFromLocal = () => {
+    const breakTime = { 'break': 0, 'exercise': 0 };
+    localStorage.setItem('breakTime', JSON.stringify(breakTime));
 }
 
 export {
     addToLocalStorage,
-    getStoredBreakTime
-}
+    getFromLocalStorage,
+    removeFromLocal
+};
