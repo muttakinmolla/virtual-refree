@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import './ScoreBoard.css';
 import Author from '../../muttakin_the_dev3.jpg';
+import { addToLocalStorage } from '../../utilities/utilities';
 
 const ScoreBoard = (props) => {
     const gameTime = props.gameTime;
-    console.log(gameTime)
+    const [breakTime, setBreakTime] = useState(0);
+
+
+    const handleBreakTime = (time) => {
+        addToLocalStorage(time);
+        setBreakTime(time);
+    }
     return (
         <div>
             <div className='d-flex align-items-center mt-4 main-score-board'>
@@ -40,22 +47,22 @@ const ScoreBoard = (props) => {
             <div className="row m-2 p-4 rounded body-details">
                 <div className="col-3">
                     <div className=''>
-                        <button className='interval-btn'><p>10<span className='span-text'>min</span></p></button>
+                        <button className='interval-btn' onClick={() => handleBreakTime(10)}>10<span className='span-text'>min</span></button>
                     </div>
                 </div>
                 <div className="col-3">
                     <div>
-                        <button className='interval-btn'><p>20<span className='span-text'>min</span></p></button>
+                        <button className='interval-btn' onClick={() => handleBreakTime(20)}><p>20<span className='span-text'>min</span></p></button>
                     </div>
                 </div>
                 <div className="col-3">
                     <div>
-                        <button className='interval-btn'><p>30<span className='span-text'>min</span></p></button>
+                        <button className='interval-btn' onClick={() => handleBreakTime(30)}><p>30<span className='span-text'>min</span></p></button>
                     </div>
                 </div>
                 <div className="col-3">
                     <div>
-                        <button className='interval-btn'><p>40<span className='span-text'>min</span></p></button>
+                        <button className='interval-btn' onClick={() => handleBreakTime(40)}><p>40<span className='span-text'>min</span></p></button>
                     </div>
                 </div>
             </div>
@@ -63,11 +70,11 @@ const ScoreBoard = (props) => {
             <h3 className='mt-4 mb-4'>Exercise Details</h3>
             <div className='d-flex justify-content-between m-2 game-time p-2 rounded'>
                 <p><b>Exercise Time :</b></p>
-                <p>{ gameTime } <span>M</span></p>
+                <p>{gameTime} <span>M</span></p>
             </div>
             <div className='d-flex justify-content-between m-2 game-time p-2 rounded'>
                 <p><b>Break Time :</b></p>
-                <p>0 <span>M</span></p>
+                <p>{breakTime} <span>M</span></p>
             </div>
 
             <button className='mt-5 w-100 game-end-btn rounded'>Game End</button>
