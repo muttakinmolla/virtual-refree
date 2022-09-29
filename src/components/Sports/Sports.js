@@ -4,6 +4,7 @@ import './Sports.css';
 
 const Sports = (props) => {
     const { name, image, time, age } = props.sport;
+    const handleGameTime = props.handleGameTime;
     return (
         <div className="col-4 mb-3">
             <Card className='p-3'>
@@ -14,7 +15,7 @@ const Sports = (props) => {
                         Age: <b>{age}</b>
                     </Card.Text>
                     <p>Time: <b>{time}</b></p>
-                    <button className='AddSportsButton'>Add To List</button>
+                    <button className='AddSportsButton' onClick={() => handleGameTime(time)}>Add To List</button>
                 </Card.Body>
             </Card>
         </div>

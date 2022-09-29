@@ -4,7 +4,9 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import './ScoreBoard.css';
 import Author from '../../muttakin_the_dev3.jpg';
 
-const ScoreBoard = () => {
+const ScoreBoard = (props) => {
+    const gameTime = props.gameTime;
+    console.log(gameTime)
     return (
         <div>
             <div className='d-flex align-items-center mt-4 main-score-board'>
@@ -61,7 +63,7 @@ const ScoreBoard = () => {
             <h3 className='mt-4 mb-4'>Exercise Details</h3>
             <div className='d-flex justify-content-between m-2 game-time p-2 rounded'>
                 <p><b>Exercise Time :</b></p>
-                <p>0 <span>M</span></p>
+                <p>{ gameTime } <span>M</span></p>
             </div>
             <div className='d-flex justify-content-between m-2 game-time p-2 rounded'>
                 <p><b>Break Time :</b></p>

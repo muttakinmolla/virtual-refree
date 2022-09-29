@@ -7,15 +7,18 @@ import ScoreBoard from '../ScoreBoard/ScoreBoard';
 
 const AllSports = () => {
     const [sports, setSports] = useState([]);
+    const [gameTime, setGameTime] = useState(0);
 
     useEffect(() => {
         fetch('fakeData.json')
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setSports(data)
-            });
+            .then(data => { setSports(data) });
     }, []);
+
+    const handleGameTime = (time) => {
+        const newGameTime = gameTime + time;
+        setGameTime(newGameTime);
+    }
     return (
         <div className='row'>
             <div className="col-9 p-5">
@@ -23,13 +26,17 @@ const AllSports = () => {
                 <h4 className='mt-5 mb-4'>Take Your Game Today</h4>
                 <div className="row">
                     {
-                        sports.map(sport => <Sports sport={sport} key={sport.id}></Sports>)
+                        sports.map(sport => <Sports
+                            sport={sport}
+                            key={sport.id}
+                            handleGameTime={handleGameTime}
+                        ></Sports>)
                     }
 
                 </div>
             </div>
             <div className="col-3 main-score-board">
-                <ScoreBoard></ScoreBoard>
+                <ScoreBoard gameTime={gameTime}></ScoreBoard>
             </div>
         </div>
     );
