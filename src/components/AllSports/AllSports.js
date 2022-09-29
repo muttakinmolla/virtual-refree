@@ -20,8 +20,8 @@ const AllSports = () => {
         setGameTime(newGameTime);
     }
     return (
-        <div className='row'>
-            <div className="col-9 p-5">
+        <div className='row flex-column-reverse flex-lg-row'>
+            <div className="col-lg-9 p-5">
                 <h1 className='heading'><FontAwesomeIcon icon={faShield} className='icon pe-4' />Virtual Referee</h1>
                 <h4 className='mt-5 mb-4'>Take Your Game Today</h4>
                 <div className="row">
@@ -35,7 +35,7 @@ const AllSports = () => {
 
                 </div>
             </div>
-            <div className="col-3 main-score-board">
+            <div className="col-lg-3 main-score-board">
                 <ScoreBoard gameTime={gameTime}></ScoreBoard>
             </div>
 

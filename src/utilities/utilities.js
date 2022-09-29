@@ -22,13 +22,13 @@ const getFromLocalStorage = () => {
     return breakTime;
 }
 
-const removeFromLocal = () => {
-    const breakTime = { 'break': 0, 'exercise': 0 };
-    localStorage.setItem('breakTime', JSON.stringify(breakTime));
+
+const deleteGameSummary = () =>{
+    localStorage.removeItem('breakTime');
 }
 
 export {
     addToLocalStorage,
     getFromLocalStorage,
-    removeFromLocal
+    deleteGameSummary
 };

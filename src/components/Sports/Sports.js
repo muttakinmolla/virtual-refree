@@ -6,7 +6,7 @@ const Sports = (props) => {
     const { name, image, time, age } = props.sport;
     const handleGameTime = props.handleGameTime;
     return (
-        <div className="col-4 mb-3">
+        <div className="col-lg-4 mb-3">
             <Card className='p-3'>
                 <Card.Img variant="top" src={image} className='' />
                 <Card.Body>

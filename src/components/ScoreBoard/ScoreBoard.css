@@ -10,13 +10,16 @@
 }
 
 .interval-btn{
-    background-color: #F94892;
+    background-color: rgb(194, 194, 194);
     border: none;
     color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
 }
 
 .game-end-btn{
-    background-color: #F94892;
+    background-color: red;
     color: white;
     border: none;
     padding: 7px;
