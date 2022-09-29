@@ -2,8 +2,8 @@
     "id": 1,
     "name": "Badminton",
     "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
-    "age": 61,
-    "time": "16-50",
+    "age": "16-50",
+    "time": 61,
     "image": "https://i.ibb.co/xzFqsHb/badminton.jpg"
 }, {
     "id": 2,

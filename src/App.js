@@ -5,7 +5,7 @@ import AllSports from './components/AllSports/AllSports';
 function App() {
   return (
     <div className='main-bg'>
-      <div className="container">
+      <div className="container-fluid">
         <AllSports></AllSports>
       </div>
     </div>

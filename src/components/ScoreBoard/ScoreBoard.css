@@ -4,7 +4,21 @@
 .span-text{
     font-size: 14px;
 }
-.body-details{
+.body-details, .game-time{
     background-color: #F94892;
     color: white;
 }
+
+.interval-btn{
+    background-color: #F94892;
+    border: none;
+    color: white;
+}
+
+.game-end-btn{
+    background-color: #F94892;
+    color: white;
+    border: none;
+    padding: 7px;
+}
+

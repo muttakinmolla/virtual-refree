@@ -18,9 +18,9 @@ const AllSports = () => {
     }, []);
     return (
         <div className='row'>
-            <div className="col-8">
+            <div className="col-9 p-5">
                 <h1 className='heading'><FontAwesomeIcon icon={faShield} className='icon pe-4' />Virtual Referee</h1>
-                <h4 className='mt-5'>Take Your Game Today</h4>
+                <h4 className='mt-5 mb-4'>Take Your Game Today</h4>
                 <div className="row">
                     {
                         sports.map(sport => <Sports sport={sport} key={sport.id}></Sports>)
@@ -28,7 +28,7 @@ const AllSports = () => {
 
                 </div>
             </div>
-            <div className="col-4 main-score-board">
+            <div className="col-3 main-score-board">
                 <ScoreBoard></ScoreBoard>
             </div>
         </div>
